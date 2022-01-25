@@ -2,7 +2,7 @@ import React from 'react'
 import backgroundImg from '../background.png'
 import './Main.css'
 import ZodiacCard from '../ZodiacCard/ZodiacCard.js'
-import { zodiac } from '../data'
+
 
 export default function Main(props) {
   return (
@@ -11,12 +11,16 @@ export default function Main(props) {
       {/* get the zodiac array from props */}
       {/* for each item in the `zodiacs` array props, render a ZodiacCard component, passing in the name and the dates as props to the ZodiacCard component */}
       {/* remember that when you map over an array and render out a list, each item in the list needs a unique 'key' prop */}
+
       {
         // console.log(props.zodiacs);
         props.zodiacs.map((zodiac, i) => 
-          <ZodiacCard key={zodiac.name + i} name={zodiac.name} date={zodiac.date} />
+          <ZodiacCard 
+            key={zodiac.name + i} 
+            name={zodiac.name} 
+            dates={zodiac.dates} 
+          />
         )
-
       }
 
     </main>
